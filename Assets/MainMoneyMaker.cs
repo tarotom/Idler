@@ -12,7 +12,7 @@ public class MainMoneyMaker : MonoBehaviour
     {
         // Button btn = moneyMaker.GetComponent<Button>();
 		// btn.onClick.AddListener(TaskOnClick);
-        moneyToTheBankFromClickingAmount = 9;
+        moneyToTheBankFromClickingAmount = 1;
     }
 
     // Update is called once per frame

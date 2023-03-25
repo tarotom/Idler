@@ -12,6 +12,9 @@ public class GameControllerScript : MonoBehaviour
     private int updateTime = 1;
     private int increaseMoneyInTheBankBy;
     public TextMeshProUGUI moneyInTheBankAmountGUI;
+    // get all moneymakingresources
+    public GameObject moneyMakingMethod1;
+    MoneyMakingMethodController moneyMakingMethodControllerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,7 @@ public class GameControllerScript : MonoBehaviour
         increaseMoneyInTheBankBy = 1;
         moneyInTheBankAmount = 0;
         moneyInTheBankAmountGUI.text = ""+moneyInTheBankAmount;
+        moneyMakingMethodControllerScript = moneyMakingMethod1.GetComponent<MoneyMakingMethodController>();
     }
 
     // Update is called once per frame
@@ -28,6 +32,7 @@ public class GameControllerScript : MonoBehaviour
 
         if (timer >= updateTime)
         {
+            HandleMoneyMakingCalculations();
             timer = 0f;
             moneyInTheBankAmount += increaseMoneyInTheBankBy;
             moneyInTheBankAmountGUI.text = ""+moneyInTheBankAmount;
@@ -36,7 +41,12 @@ public class GameControllerScript : MonoBehaviour
 
     public void IncreaseMoneyInTheBankAmountOnClick(int increaseMoneyInTheBankByClickingAmount) {
         moneyInTheBankAmount += increaseMoneyInTheBankByClickingAmount;
-        Debug.Log($"Money in the bank increased by 1. In bank = {moneyInTheBankAmount}");
         moneyInTheBankAmountGUI.text = ""+moneyInTheBankAmount;
+    }
+
+    // take into account all "passive" money making methods
+    public void HandleMoneyMakingCalculations(){
+        var money = moneyMakingMethodControllerScript.moneyPerSecond * moneyMakingMethodControllerScript.resourcesOwnedAmount;
+        moneyInTheBankAmount += money;
     }
 }
