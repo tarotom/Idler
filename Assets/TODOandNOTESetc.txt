@@ -1,0 +1,5 @@
+1. Fix project folder and file structure
+2. Money making should have parameter for the amount to be increased by. ex clicking can give more than 1 money. etc
+3. Add different ways of making money. ex. begging, working, investing, selling, owning companies, underpant elves etc.
+4. ???
+5. Profit
