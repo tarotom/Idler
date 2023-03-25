@@ -19,6 +19,7 @@ public class MoneyRecourceControllerScript : MonoBehaviour
     {
         moneyMakingMethodControllerScript = GetComponent<MoneyMakingMethodController>();
         buyButton.onClick.AddListener(BuyButtonClicked);
+        sellButton.onClick.AddListener(SellButtonClicked);
     }
 
     // Update is called once per frame
@@ -28,8 +29,16 @@ public class MoneyRecourceControllerScript : MonoBehaviour
 
     void BuyButtonClicked()
     {
-        Debug.Log("Buy button clicked!");
         moneyMakingMethodControllerScript.resourcesOwnedAmount += 1;
+    }
+
+    void SellButtonClicked()
+    {
+        Debug.Log("Buy button clicked!");
+        if (moneyMakingMethodControllerScript.resourcesOwnedAmount > 0)
+        {
+            moneyMakingMethodControllerScript.resourcesOwnedAmount -= 1;
+        }
     }
 
 }

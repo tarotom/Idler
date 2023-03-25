@@ -3,5 +3,6 @@
 3. Add different ways of making money. ex. begging, working, investing, selling, owning companies, underpant elves etc.
 4. Fix NullReferenceException: Object reference not set to an instance of an object
    MoneyRecourceControllerScript.Start () (at Assets/MoneyRecourceControllerScript.cs:21)
+4. Add buy/sell switch for 10/100/Max buttons
 4. ???
 5. Profit
